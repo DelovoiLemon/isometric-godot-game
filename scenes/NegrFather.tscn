@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnr1415tbq0b8"]
+
+[ext_resource type="Script" path="res://scripts/NegrFather.gd" id="1_clh2f"]
+[ext_resource type="Script" path="res://scripts/NegrScript.gd" id="2_2nk45"]
+[ext_resource type="SpriteFrames" uid="uid://drb4wbpukrnbm" path="res://animations/nerg_anim.tres" id="3_tqeen"]
+
+[node name="Charecters" type="Node2D"]
+script = ExtResource("1_clh2f")
+metadata/Camera = NodePath("../Camera2D")
+metadata/NiggaTemplate = NodePath("NergTemplate")
+
+[node name="NergTemplate" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(51, 49)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_2nk45")
+metadata/isActive = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NergTemplate"]
+polygon = PackedVector2Array(-18, 32, -18, 29, 18, 29, 18, 32)
+
+[node name="playerSprite" type="AnimatedSprite2D" parent="NergTemplate"]
+sprite_frames = ExtResource("3_tqeen")
+animation = &"down"
+
+[node name="Timer" type="Timer" parent="NergTemplate"]
+
+[connection signal="timeout" from="NergTemplate/Timer" to="NergTemplate" method="_on_timer_timeout"]

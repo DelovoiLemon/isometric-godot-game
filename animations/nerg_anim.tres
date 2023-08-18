@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://drb4wbpukrnbm"]
+
+[ext_resource type="Texture2D" uid="uid://brbmbu52egj74" path="res://resources/nerg-front.png" id="1_b735c"]
+[ext_resource type="Texture2D" uid="uid://cqdp4noo8nf5r" path="res://resources/nerg-back.png" id="2_o4tjl"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b735c")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o4tjl")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
